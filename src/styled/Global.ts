@@ -1,4 +1,5 @@
 import { createGlobalStyle, css } from 'styled-components';
+import { colors } from './Colors';
 
 const bodyTheme = css`
 	color: ${(props): string => props.theme.textColor};
@@ -22,7 +23,6 @@ export const GlobalStyle = createGlobalStyle`
 		font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 		font-size: 16px;
 		font-weight: 400;
-		font-display: fallback;
 		line-height: 1.5;
 		text-align: left;
 		${bodyTheme}
@@ -520,11 +520,11 @@ export const GlobalStyle = createGlobalStyle`
 	}
 
 	.bg-syracuse-orange {
-		background-color: $color-syracuse-orange;
+		background-color: ${colors.rutgersScarlet};
 	}
 
 	.bg-rutgers-scarlet {
-		background-color: $color-rutgers-scarlet;
+		background-color: ${colors.rutgersScarlet};
 	}
 
 	.bg-color-ivory {

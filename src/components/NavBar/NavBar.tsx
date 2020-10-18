@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-//  import { useSelector, useDispatch } from 'react-redux';
-//  import { toggleTheme } from '../../redux/modules/theme';
 import { State as ThemeState } from '../../redux/modules/theme';
 
 import { useLocation } from 'react-router-dom';
@@ -14,9 +12,6 @@ export type State = {
 };
 
 export const NavBar: React.FC = () => {
-	// const dispatch = useDispatch();
-	// const toggledTheme = useSelector((state: State) => state.theme.mode);
-
 	const themeMode = useTheme();
 	const location = useLocation();
 
@@ -25,7 +20,7 @@ export const NavBar: React.FC = () => {
 
 	useEffect(() => {
 		setActiveRoute(location.pathname);
-
+    console.log('HBHBHHBHHBHBHBHBHB+++++++++clicked+++++++++++: ', clicked)
 		return () => {
 			console.log(
 				'>>>>>>>>>>>>>>>>>>>>>>>> NavBar > useEffect() > componentWillUnmount > cleanup phase',
@@ -37,11 +32,6 @@ export const NavBar: React.FC = () => {
 		themeMode.toggleTheme();
 		setClicked(false);
 	};
-
-	//  const doThemeToggleXX = () => {
-	//  	dispatch(toggleTheme(toggledTheme));
-	//  	setClicked(false);
-	//  };
 
 	return (
 		<Styles.NavBar className="navbar">
@@ -63,11 +53,6 @@ export const NavBar: React.FC = () => {
 
 					<Styles.Collapse>
 						<Styles.NavBarNav clicked={clicked} className={clicked ? 'clicked' : ''}>
-							{/* <li>
-								<Styles.NavBarNavA className="js-scroll-trigger" onClick={doThemeToggleXX}>
-									xxxxxxxxxxxxx
-								</Styles.NavBarNavA>
-							</li> */}
 							<li>
 								<Styles.NavBarNavA className="js-scroll-trigger" onClick={doThemeToggle}>
 									use {themeMode.mode === 'dark' ? `default` : `dark`} theme

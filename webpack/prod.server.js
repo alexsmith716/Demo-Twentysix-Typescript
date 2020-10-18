@@ -3,7 +3,6 @@ const webpack = require('webpack');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const WebpackBar = require('webpackbar');
 const externals = require('./node-externals');
-
 const rootPath = path.resolve(__dirname, '..');
 
 const generatedIdent = (name, localName, lr) => {

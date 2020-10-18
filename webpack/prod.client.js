@@ -1,6 +1,5 @@
 const path = require('path');
 const webpack = require('webpack');
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const ExtractCssChunks = require('extract-css-chunks-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
@@ -173,19 +172,7 @@ module.exports = {
 	},
 
 	optimization: {
-		minimize: true,
-		minimizer: [
-			new CssMinimizerPlugin({
-				minimizerOptions: {
-					preset: [
-						'default',
-						{
-							discardComments: { removeAll: true },
-						},
-					],
-				},
-			}),
-		],
+    minimize: true,
 		splitChunks: {
 			cacheGroups: {
 				vendors: {
