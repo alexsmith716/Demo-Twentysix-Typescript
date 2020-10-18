@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { AppColors } from '../../styled';
+import { colors } from '../../styled/Colors';
 
 export const InfoBarContainerBgColor = styled.div`
-	background-color: ${AppColors.colors.lightskyblue};
+	background-color: ${colors.lightskyblue};
 `;
 
 export const InfoBarContainer = styled.div`
@@ -15,6 +15,6 @@ export const InfoBarContainerStyled = styled.div`
 `;
 
 export const DataMessage = styled.span`
-	color: ${AppColors.colors.firebrick};
+	color: ${colors.firebrick};
 	font-family: 'RobotoMonoV4LatinRegular', sans-serif;
 `;

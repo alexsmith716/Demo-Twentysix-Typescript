@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
 export type Props = {
 	text: string;
@@ -19,21 +19,25 @@ const dot = keyframes`
 	}
 `;
 
+const dotRule = css`
+  animation: ${dot} 1.3s infinite;
+`
+
 const DotOne = styled.span`
 	opacity: 10;
-	animation: ${dot} 1.3s infinite;
+	${dotRule};
 	animation-delay: 0s;
 `;
 
 const DotTwo = styled.span`
 	opacity: 10;
-	animation: ${dot} 1.3s infinite;
+	${dotRule};
 	animation-delay: 0.2s;
 `;
 
 const DotThree = styled.span`
 	opacity: 10;
-	animation: ${dot} 1.3s infinite;
+	${dotRule};
 	animation-delay: 0.3s;
 `;
 

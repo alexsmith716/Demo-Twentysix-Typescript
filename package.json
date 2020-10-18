@@ -6,6 +6,8 @@
 	"author": "AlexSmith716",
 	"license": "MIT",
 	"scripts": {
+    "wspc": "NODE_ENV=production webpack --stats --config ./webpack/prod.client.js",
+    "wsps": "NODE_ENV=production webpack --stats --config ./webpack/prod.server.js",
 		"prod": "NODE_ENV=production PORT=8080 APIPORT=3030 node ./bin/main.js",
 		"clean": "rimraf build dist",
 		"test": "IS_CLIENT=false jest src",
@@ -14,6 +16,8 @@
 		"check-types": "tsc --noEmit true",
 		"lint:styles": "stylelint src/components/**/*.{css,scss,js,tsx}",
 		"lint:js": "eslint src/components/**/*.{js,ts,tsx}",
+    "lint:Loading": "eslint src/components/Loading/Loading.tsx",
+    "stylelint:Loading": "stylelint src/components/Loading/Loading.tsx",
 		"format": "prettier --config .prettierrc --write src/"
 	},
 	"dependencies": {
