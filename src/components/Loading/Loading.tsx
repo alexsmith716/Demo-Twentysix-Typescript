@@ -20,7 +20,7 @@ const dot = keyframes`
 `;
 
 const dotRule = css`
-  animation: ${dot} 1.3s infinite;
+	animation: ${dot} 1.3s infinite;
 `
 
 const DotOne = styled.span`
