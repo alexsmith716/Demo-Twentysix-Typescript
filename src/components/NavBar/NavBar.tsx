@@ -20,7 +20,6 @@ export const NavBar: React.FC = () => {
 
 	useEffect(() => {
 		setActiveRoute(location.pathname);
-    console.log('HBHBHHBHHBHBHBHBHB+++++++++clicked+++++++++++: ', clicked)
 		return () => {
 			console.log(
 				'>>>>>>>>>>>>>>>>>>>>>>>> NavBar > useEffect() > componentWillUnmount > cleanup phase',
@@ -45,36 +44,34 @@ export const NavBar: React.FC = () => {
 						Election App
 					</Styles.NavBarBrandLink>
 
+					<Styles.NavBarNav clicked={clicked} className={clicked ? 'clicked' : ''}>
+						<li>
+							<Styles.NavBarNavA className="js-scroll-trigger" onClick={doThemeToggle}>
+								use {themeMode.mode === 'dark' ? `default` : `dark`} theme
+							</Styles.NavBarNavA>
+						</li>
+
+						{NavLinks.map((item, index) => {
+							return (
+								<li key={index}>
+									<Styles.NavBarNavLink
+										isActive={activeRoute === item.url}
+										to={item.url}
+										className="js-scroll-trigger"
+										onClick={() => setClicked(false)}
+									>
+										{item.title}
+									</Styles.NavBarNavLink>
+								</li>
+							);
+						})}
+					</Styles.NavBarNav>
+
 					<Styles.Toggler onClick={() => setClicked(!clicked)}>
 						{clicked && <Styles.StyledSvgTimes fill="#ffffff" />}
 
 						{!clicked && <Styles.StyledSvgBars fill="#ffffff" />}
 					</Styles.Toggler>
-
-					<Styles.Collapse>
-						<Styles.NavBarNav clicked={clicked} className={clicked ? 'clicked' : ''}>
-							<li>
-								<Styles.NavBarNavA className="js-scroll-trigger" onClick={doThemeToggle}>
-									use {themeMode.mode === 'dark' ? `default` : `dark`} theme
-								</Styles.NavBarNavA>
-							</li>
-
-							{NavLinks.map((item, index) => {
-								return (
-									<li key={index}>
-										<Styles.NavBarNavLink
-											isActive={activeRoute === item.url}
-											to={item.url}
-											className="js-scroll-trigger"
-											onClick={() => setClicked(false)}
-										>
-											{item.title}
-										</Styles.NavBarNavLink>
-									</li>
-								);
-							})}
-						</Styles.NavBarNav>
-					</Styles.Collapse>
 				</Styles.Expand>
 			</div>
 		</Styles.NavBar>
