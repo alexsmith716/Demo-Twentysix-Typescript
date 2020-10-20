@@ -5,154 +5,124 @@ import { SvgBars } from '../../assets/svg';
 import { SvgTimes } from '../../assets/svg';
 
 interface Props {
-  readonly clicked?: boolean;
-  readonly isActive?: boolean;
+	readonly clicked?: boolean;
+	readonly isActive?: boolean;
 }
 
 const NavBarBGTheme = css`
-  background-color: ${(props) => props.theme.navBarColor};
+	background-color: ${(props) => props.theme.navBarColor};
 `;
 
 export const NavBar = styled.div`
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 1030;
-  ${NavBarBGTheme}
-  height: 56px;
-  display: flex;
-  flex: 1 1 auto;
-  align-items: center;
+	display: flex;
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 1030;
+	${NavBarBGTheme}
+	height: 56px;
+	align-items: center;
 `;
 
 export const Expand = styled.div`
-  display: flex;
-  flex: 1 1 auto;
-  justify-content: space-between;
-  background-color: #009900;
-
-  @media screen and (max-width: 992px) {
-    display: flex;
-    flex: 1 1 auto;
-    justify-content: space-between;
-    align-items: center;
-  }
-`;
-
-export const ExpandXX = styled.div`
-  display: flex;
-  flex: 1 1 auto;
-  justify-content: space-between;
-  background-color: #ff99ff;
-
-  @media screen and (max-width: 992px) {
-    display: flex;
-    flex: 1 1 auto;
-    justify-content: space-between;
-    align-items: center;
-  }
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 `;
 
 export const NavBarBrandLink = styled(Link)`
-  color: #fff;
-  font-size: 1.25rem;
-  text-decoration: none;
-  cursor: pointer;
-  background-color: #990099;
+	color: #fff;
+	font-size: 1.25rem;
+	text-decoration: none;
+	cursor: pointer;
 
-  @media screen and (max-width: 992px) {
-    width: 100%;
-  }
+	@media screen and (max-width: 992px) {
+		width: 100%;
+	}
 `;
 
 export const Toggler = styled.div`
-  display: none;
+	display: none;
 
-  @media screen and (max-width: 992px) {
-    display: block;
-    cursor: pointer;
-  }
-`;
-
-export const Collapse = styled.div`
-  display: flex;
-  flex: 1 1 auto;
-  align-items: center;
+	@media screen and (max-width: 992px) {
+		display: block;
+		cursor: pointer;
+	}
 `;
 
 export const NavBarNav = styled.ul<Props>`
-  display: grid;
-  grid-template-columns: repeat(4, auto);
-  grid-gap: 15px;
-  list-style: none;
-  text-align: center;
+	margin-left: auto;
+	display: grid;
+	grid-template-columns: repeat(4, auto);
+	grid-gap: 15px;
+	list-style: none;
+	text-align: center;
 
-  @media screen and (max-width: 992px) {
-    grid-template-columns: 1fr;
-    grid-gap: 1px;
-    width: 100%;
-    position: absolute;
-    top: 56px;
-    left: -100%;
-    ${(props) =>
-      props.clicked &&
-      css`
-        background: ${colors.grayEight};
-        left: 0;
-        opacity: 1;
-        z-index: 1;
-      `}
-  }
+	@media screen and (max-width: 992px) {
+		grid-template-columns: 1fr;
+		grid-gap: 1px;
+		width: 100%;
+		position: absolute;
+		top: 56px;
+		left: -100%;
+
+		${props => props.clicked && css`
+			background: #343a40;
+			left: 0;
+			opacity: 1;
+			z-index: 1;
+		`}
+	}
 `;
 
 export const NavBarNavA = styled.a`
-  color: #adb5bd;
-  text-decoration: none;
-  cursor: pointer;
+	color: #adb5bd;
+	text-decoration: none;
+	cursor: pointer;
 
-  &:hover {
-    color: #e9ecef;
-  }
+	&:hover {
+		color: #e9ecef;
+	}
 
-  @media screen and (max-width: 992px) {
-    text-align: center;
-    padding: 0.5rem;
-    width: 100%;
-    display: table;
+	@media screen and (max-width: 992px) {
+		text-align: center;
+		padding: 0.5rem;
+		width: 100%;
+		display: table;
 
-    &:hover {
-      background-color: ${colors.grayTwentyfour};
-    }
-  }
+		&:hover {
+			background-color: ${colors.grayTwentyfour};
+		}
+	}
 `;
 
 export const NavBarNavLink = styled(Link)<Props>`
-  color: ${(props) => (props.isActive ? colors.ivory : colors.grayFive)};
-  text-decoration: none;
+	color: ${(props) => (props.isActive ? colors.ivory : colors.grayFive)};
+	text-decoration: none;
 
-  &:hover {
-    color: ${colors.grayTwo};
-  }
+	&:hover {
+		color: ${colors.grayTwo};
+	}
 
-  @media screen and (max-width: 992px) {
-    text-align: center;
-    padding: 0.5rem;
-    width: 100%;
-    display: table;
+	@media screen and (max-width: 992px) {
+		text-align: center;
+		padding: 0.5rem;
+		width: 100%;
+		display: table;
 
-    &:hover {
-      background-color: ${colors.grayTwentyfour};
-    }
-  }
+		&:hover {
+			background-color: ${colors.grayTwentyfour};
+		}
+	}
 `;
 
 export const StyledSvgBars = styled(SvgBars)`
-  height: 30px;
-  vertical-align: middle;
+	height: 30px;
+	vertical-align: middle;
 `;
 
 export const StyledSvgTimes = styled(SvgTimes)`
-  height: 30px;
-  vertical-align: middle;
+	height: 30px;
+	vertical-align: middle;
 `;
