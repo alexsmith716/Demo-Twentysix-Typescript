@@ -36,10 +36,6 @@ export const NavBarBrandLink = styled(Link)`
 	font-size: 1.25rem;
 	text-decoration: none;
 	cursor: pointer;
-
-	@media screen and (max-width: 992px) {
-		width: 100%;
-	}
 `;
 
 export const Toggler = styled.div`
