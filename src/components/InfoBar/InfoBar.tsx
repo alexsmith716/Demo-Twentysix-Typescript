@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { loadInfo } from '../../redux/modules/info';
 import { State as InfoState } from '../../redux/modules/info';
-import { Loading } from '../Loading';
+//import { Loading } from '../Loading';
 import { Button } from '../Button';
 import * as Styles from './styles';
 
@@ -31,7 +31,7 @@ export const InfoBar: React.FC = () => {
 			<Styles.InfoBarContainerBgColor className="flex-column-center mb-5">
 				<Styles.InfoBarContainer className="flex-column-center">
 					{/* (>>>>>>>>>>>>>>>>>>>>>> LOADING >>>>>>>>>>>>>>>>>>>>>>>>) */}
-					{loading && <Loading text="Loading" />}
+					{/* {loading && <Loading text="Loading" />} */}
 
 					{/* (>>>>>>>>>>>>>>>>>>>>>> ERROR >>>>>>>>>>>>>>>>>>>>>>>>) */}
 					{error && (
